@@ -6,6 +6,10 @@ const port = 5000;
 app.use(express.json());
 app.use("/api/v1", userRouter);
 
+app.get('/',function(req,res){
+  res.send('welcome')
+})
+
 app.listen(port, () => {
   console.log(`server is running on ${port} ..👍`);
   const error = false;
