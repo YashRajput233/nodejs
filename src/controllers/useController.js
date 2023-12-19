@@ -149,7 +149,8 @@ const login = async (req, res) => {
     const token = jwt.sign({ id: mainuser._id }, envConfig.SECREAT_KEY, {
       expiresIn: "1h",
     });
-    return res.status(200).json({ message: "login sucessful", token });
+    let userInfo={token:token}
+    return res.status(200).json({ message: "login sucessful", userInfo });
   } catch (error) {
     res.status(500).json({ error: "Error during login", error });
   }
